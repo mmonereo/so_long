@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 17:10:36 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 20:21:13 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:20:35 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@
 		int		collectibles;
 		int		player_dup;
 		int		total_moves;
+		int 	victory;
 	}			t_map;
 
 	typedef struct s_player

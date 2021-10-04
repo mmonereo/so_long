@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 16:21:26 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 18:13:39 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:21:32 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ int launch_game(t_global *global)
 	if(!get_all_sprites(global))
 		return(mlx_error(31));
 	initial_paint(global);
-	mlx_key_hook(global->mlx->win, key_press, global);
+	if (global->map->victory == 0)
+		mlx_key_hook(global->mlx->win, key_press, global);
 	mlx_hook(global->mlx->win, 17, (1L<<5), close_mlx, global);
 	mlx_loop(global->mlx->mlx_ptr);
 	return(1);

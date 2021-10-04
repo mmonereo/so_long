@@ -6,7 +6,7 @@
 #    By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/27 16:39:49 by mmonereo          #+#    #+#              #
-#    Updated: 2021/09/29 15:43:37 by mmonereo         ###   ########.fr        #
+#    Updated: 2021/10/04 15:50:09 by mmonereo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ $(NAME):		$(OBJS) $(LIBFT) $(MLX)
 				
 
 %.o: 			%.c
-				gcc $(CFLAGS) -c $(SRCS)
+				gcc $(CFLAGS) -c $<
 
 clean:
 				$(RM) $(OBJS) $(LIBFT) $(MLX)

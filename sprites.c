@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 15:43:09 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 20:25:30 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:12:43 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,10 +118,8 @@ int get_all_sprites(t_global *global)
 		return(0);
 	if(!(get_open_exit_sprite(global)))
 		return(0);
-	printf("pasa win\n");
 	if(!(get_win_sprite(global)))
 		return(0);
-	
 	if(!(get_background_sprite(global)))
 		return(0);
 	return(1);

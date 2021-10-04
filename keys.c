@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 10:37:02 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 20:22:24 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:24:49 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int move_player (t_global *global, t_point *new)
 		global->player->prev_position->type = '0';
 		global->player->current_position = new;
 		global->map->collectibles--;
-		printf("pocimas %i\n\n",global->map->collectibles);
 		if (global->map->collectibles == 0)
 			open_exit(global);
 		paint_player(global);
@@ -40,15 +39,14 @@ int move_player (t_global *global, t_point *new)
 		return(1);
 	}
 	else if(new->type == 'E' && global->map->collectibles == 0)
-	{
-		printf("YOU WON\n");
+	{	
 		mlx_put_image_to_window(global->mlx->mlx_ptr, global->mlx->win, global->background_img->img_ptr, 0, 0);
-		mlx_put_image_to_window(global->mlx->mlx_ptr, global->mlx->win, global->win_img->img_ptr, 1 * SPRITE_SIZE, 1 * SPRITE_SIZE);
+		mlx_put_image_to_window(global->mlx->mlx_ptr, global->mlx->win, global->win_img->img_ptr, 2 * SPRITE_SIZE, 2 * SPRITE_SIZE);
 	}
 	return(1);
 }
 
-int key_press (int keycode, t_global *global)
+int key_press(int keycode, t_global *global)
 {
 	if (keycode == 126)
 		move_player(global, global->player->current_position->up);

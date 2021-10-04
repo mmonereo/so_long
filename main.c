@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 15:38:13 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 17:55:21 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:19:09 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,6 @@ int main (int argc, char **argv)
 		return(-1);
 	if(!(global = start_global_struct(argv)))
 		return(-1);
-	printf("POCIMAS: %i\n", global->map->collectibles);
 	launch_game(global);
 	return(0);
 }

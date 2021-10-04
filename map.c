@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:05:37 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 16:54:53 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:20:48 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ t_map *alloc_map_struct(void)
 	map->collectibles = 0;
 	map->player_dup = 0;
 	map->total_moves = 0;
+	map->victory = 0;
 	return (map);
 }
