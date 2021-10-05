@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 15:34:11 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/27 16:35:53 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/05 12:24:07 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,23 +62,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	last = ft_lstlast(*lst);
 	last->next = new;
-}
-
-void print_lst (t_list *to_print)
-{
-	t_list *tmp;
-	int		i;
-	
-	i = 0;
-	tmp = to_print;
-	while (to_print != NULL)
-	{	
-		printf("lst %i: %s\n", to_print->index, to_print->line);
-		printf("ancho: %i\n", to_print->width);
-		to_print = tmp->next;
-		tmp = tmp->next;
-		i++;
-	}
 }
 
 // creates a list where each node has a line from file ,an index num and line len

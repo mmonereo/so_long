@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 17:10:39 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 16:20:52 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/05 12:40:18 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,51 +102,5 @@ int check_closed (t_list *head)
 		if (line[i++] != '1')
 			return(0);
 	}
-	return(1);
-}
-// check if there is at least one of each CEP
-int check_atleast_one(t_list *head)
-{
-	int c;
-	int e;
-	int p;
-	char *line;
-	int i;
-
-	while (head != NULL)	
-	{	
-		i = 0;
-		line = head->line;
-		while (line[i])
-		{
-			if (line[i] == 'C')
-				c = 1;
-			if (line[i] == 'E')
-				e = 1;
-			if (line[i] == 'P')
-				p = 1;
-			i++;
-		}
-		head = head->next;	
-	}
-	if ((c != 1) || (e != 1) || (p != 1))
-		return(0);
-	return(1);
-}
-
-// makes all the individual checks
-int check_map (t_list *head)
-{	
-	if(!(check_line_width(head)))
-		return(file_error(20));
-	if(!(check_elems(head)))
-		return(file_error(21));
-	if(!(check_rectangle(head)))
-		return(file_error(22));
-	if(!(check_closed(head)))
-		return(file_error(23));
-	if(!(check_atleast_one(head)))
-		return(file_error(24));
-	printf("la lista esta en orden hermano\n");
 	return(1);
 }

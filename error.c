@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 15:55:36 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 17:57:13 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/05 12:23:20 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ int file_error(int error)
 	return(0);
 }
 
-int mlx_error(int error)
+int mlx_error(int error, t_global *global)
 {	
 	if (error == 30)
 		printf("Error\nError during minilib init\n");
 	if (error == 31)
 		printf("Error\nError loading sprites\n");
-	//free globaal shit
+	free_all(global);
 	return(0);
 }

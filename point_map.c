@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 11:38:04 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 16:58:45 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/05 15:40:39 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ t_point **create_point_map(t_map *map)
 	t_point **point_map;
 	int i;
 
-	if(!(point_map = (t_point**)malloc(sizeof(t_point *) * map->total_rows + 1)))
+	if(!(point_map = (t_point **)malloc(sizeof(t_point *) * map->total_rows + 1)))
 		return (NULL);
 	i = 0;
 	while (i < map->total_rows)
 	{
 		if(!(point_map[i++] = (t_point *)malloc(sizeof(t_point) * map->total_cols + 1)))
 		{
-			//free map
+			free_point_map(point_map);
 			return(NULL);
 		}
 	}
@@ -38,7 +38,6 @@ void count_items(char item, t_map *map, int i, int j)
 	if (item == 'C')
 	{
 		map->collectibles++;
-		printf("pocima encontrada total %i\n", map->collectibles);
 	}
 	if (item == 'P')
 	{
@@ -69,7 +68,6 @@ void fill_neighbors(t_map *map, t_point **point_map, int i, int j)
 		point_map[i][j].right = &point_map[i][j + 1];
 	else
 		point_map[i][j].right = NULL;
-	
 }
 
 // fill point map with info
@@ -99,25 +97,6 @@ t_point **fill_point_map(t_list *head, t_map *map)
 	}
 	point_map[map->total_rows] = NULL;
 	return (point_map);	
-}
-
-void print_points (t_point **point_map)
-{
-	int i = 0;
-	int j = 0;
-
-	while (point_map[i])
-	{
-		j = 0;
-		while (point_map[i][j].type)
-		{
-			printf("punto: %i.%i: %c\n", i, j, point_map[i][j].type);
-			j++;
-		}
-		i++;
-	}
-	printf("\nprueba vecinal\n");
-	printf("vecino de arriba de 1.0: %i.%i %c\n", point_map[4][9].right->y, point_map[4][9].right->x,point_map[4][9].right->type );
 }
 
 int free_point_map(t_point	**point_map)

@@ -6,7 +6,7 @@
 #    By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/27 16:39:49 by mmonereo          #+#    #+#              #
-#    Updated: 2021/10/04 15:50:09 by mmonereo         ###   ########.fr        #
+#    Updated: 2021/10/05 16:30:53 by mmonereo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ MLX_DIR			= mlx
 
 MLX				= libmlx.dylib
 
-SRCS			=	check_map.c error.c keys.c map.c lst.c \
-					mlx_init.c player.c point_map.c sprites.c wall.c main.c
+SRCS			=	check_map.c check_map2.c error.c keys.c map.c lst.c sprites_2.c \
+					mlx_init.c player.c point_map.c sprites.c paint_map.c main.c aux.c
 
 OBJS			= $(SRCS:.c=.o)
 
@@ -40,11 +40,10 @@ $(MLX):
 $(NAME):		$(OBJS) $(LIBFT) $(MLX)
 				@cp $(LIBFT_DIR)/$(LIBFT) .
 				@cp $(MLX_DIR)/$(MLX) .
-				gcc $(CFLAGS) $(OBJS) $(LIBFT) $(LINK) -o $(NAME)
-				
+				gcc $(CFLAGS) $(OBJS) $(LIBFT) $(LINK) -o $@
 
 %.o: 			%.c
-				gcc $(CFLAGS) -c $<
+				gcc $(CFLAGS) -c $< 
 
 clean:
 				$(RM) $(OBJS) $(LIBFT) $(MLX)

@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 09:12:56 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/24 16:25:18 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/04 17:39:13 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int player_alloc(t_global *global)
 	global->player = player;
 	return(1);
 }
-
 
 void player_initial_pos(t_global *global)
 {
