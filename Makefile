@@ -6,7 +6,7 @@
 #    By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/27 16:39:49 by mmonereo          #+#    #+#              #
-#    Updated: 2021/10/05 16:30:53 by mmonereo         ###   ########.fr        #
+#    Updated: 2021/10/06 10:59:09 by mmonereo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,23 +32,23 @@ LINK			= -Lmlx -lmlx -framework OpenGL -framework AppKit
 all:			$(NAME)
 
 $(LIBFT):
-				@cd $(LIBFT_DIR) && $(MAKE)
+				@make -C $(LIBFT_DIR)
+				@cp $(LIBFT_DIR)/$(LIBFT) .
 
 $(MLX):
-				@cd $(MLX_DIR) && $(MAKE)
+				@make -C $(MLX_DIR)
+				@cp $(MLX_DIR)/$(MLX) .
 
 $(NAME):		$(OBJS) $(LIBFT) $(MLX)
-				@cp $(LIBFT_DIR)/$(LIBFT) .
-				@cp $(MLX_DIR)/$(MLX) .
 				gcc $(CFLAGS) $(OBJS) $(LIBFT) $(LINK) -o $@
 
 %.o: 			%.c
-				gcc $(CFLAGS) -c $< 
+				gcc $(CFLAGS) -c $<
 
 clean:
 				$(RM) $(OBJS) $(LIBFT) $(MLX)
-				@make clean -C $(LIBFT_DIR)
-				@make clean -C $(MLX_DIR) 
+				@make fclean -C $(LIBFT_DIR)
+				@make clean -C $(MLX_DIR)
 
 fclean:			clean
 				$(RM) $(NAME)

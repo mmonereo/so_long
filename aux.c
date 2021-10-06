@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:23:51 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/10/05 16:24:43 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:01:07 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ void free_all(t_global *global)
 		free(global->map);
 	if (global->mlx)
 		free(global->mlx);
-	if (global->player->player_img)
-		free(global->player->player_img);
+	if (global->player->player_right_img)
+		free(global->player->player_right_img);
+	if (global->player->player_left_img)
+		free(global->player->player_left_img);
 	if (global->player)
 		free(global->player);
 	if (global->wall_img)

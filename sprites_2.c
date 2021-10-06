@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 12:11:01 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/10/05 15:42:31 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:18:09 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,9 @@ int get_all_sprites(t_global *global)
 		return(0);
 	if(!(get_floor_sprite(global)))
 		return(0);
-	if(!(get_player_sprite(global)))
+	if(!(get_player_right_sprite(global)))
+		return(0);
+	if(!(get_player_left_sprite(global)))
 		return(0);
 	if(!(get_closed_exit_sprite(global)))
 		return(0);

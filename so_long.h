@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 17:10:36 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/10/05 16:48:31 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:26:12 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,9 @@
 	{
 		t_point	*current_position;
 		t_point	*prev_position;
-		t_img	*player_img;
+		int 	right;
+		t_img	*player_right_img;
+		t_img	*player_left_img;
 	}			t_player;
 	
 	typedef struct s_global
@@ -141,6 +143,8 @@
 	int	get_collec_sprite		(t_global *global);	
 	int	get_floor_sprite		(t_global *global);
 	int	get_player_sprite		(t_global *global);
+	int get_player_left_sprite	(t_global *global);
+	int get_player_right_sprite	(t_global *global);
 	int get_closed_exit_sprite	(t_global *global);
 	int get_open_exit_sprite	(t_global *global);
 	int	get_all_sprites			(t_global *global);
@@ -161,6 +165,7 @@
 
 	//KEYS
 	int move_player				(t_global *global, t_point *new);
+	void move_player_2			(t_global *global, t_point *new);
 	int key_press				(int keycode, t_global *globlal);
 	void update_moves			(t_global *global);
 
