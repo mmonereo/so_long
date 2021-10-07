@@ -6,16 +6,16 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 10:37:02 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/10/06 10:59:07 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 15:22:48 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int move_player (t_global *global, t_point *new)
+int	move_player(t_global *global, t_point *new)
 {
-	t_point *old;
-	
+	t_point	*old;
+
 	old = global->player->current_position;
 	if (new->type == '0')
 	{
@@ -38,15 +38,14 @@ int move_player (t_global *global, t_point *new)
 	}
 	else
 		move_player_2(global, new);
-	return(1);
+	return (1);
 }
 
-void move_player_2 (t_global *global, t_point *new)
+void	move_player_2(t_global *global, t_point *new)
 {
-	t_point *old;
-	
+	t_point	*old;
+
 	old = global->player->current_position;
-	
 	if (new->type == '1')
 	{
 		global->player->prev_position = NULL;
@@ -59,22 +58,27 @@ void move_player_2 (t_global *global, t_point *new)
 		paint_exit(global);
 		global->map->total_moves++;
 		global->map->victory = 1;
+		update_moves(global);
 		printf("You Win!!\n");
 	}
 }
 
-void update_moves(t_global *global)
+void	update_moves(t_global *global)
 {
-	char *str;
+	char	*str;
 
 	str = ft_itoa(global->map->total_moves);
-	mlx_put_image_to_window(global->mlx->mlx_ptr, global->mlx->win, global->wall_img->img_ptr, (global->map->total_cols - 1) * SPRITE_SIZE, 0 * SPRITE_SIZE);
-	mlx_string_put(global->mlx->mlx_ptr, global->mlx->win, SPRITE_SIZE  * (global->map->total_cols - 1), SPRITE_SIZE * 0.5, -1, str);
+	mlx_put_image_to_window(global->mlx->mlx_ptr,
+		global->mlx->win, global->wall_img->img_ptr,
+		(global->map->total_cols - 1) * SPRITE_SIZE, 0 * SPRITE_SIZE);
+	mlx_string_put(global->mlx->mlx_ptr, global->mlx->win,
+		SPRITE_SIZE * (global->map->total_cols - 1),
+		SPRITE_SIZE * 0.5, -1, str);
 	free(str);
 	printf("Total Moves: %i\n", global->map->total_moves);
 }
 
-int key_press(int keycode, t_global *global)
+int	key_press(int keycode, t_global *global)
 {
 	if ((keycode == 126 || keycode == 13) && global->map->victory == 0)
 		move_player(global, global->player->current_position->up);
@@ -94,5 +98,5 @@ int key_press(int keycode, t_global *global)
 		close_mlx(global);
 	if (global->map->victory == 0)
 		update_moves(global);
-	return(1);
+	return (1);
 }

@@ -6,34 +6,35 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 11:38:04 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/10/05 15:40:39 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 13:33:54 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-//malloc mem for point map
-t_point **create_point_map(t_map *map) 
+t_point	**create_point_map(t_map *map)
 {
-	t_point **point_map;
-	int i;
+	t_point	**point_map;
+	int		i;
 
-	if(!(point_map = (t_point **)malloc(sizeof(t_point *) * map->total_rows + 1)))
+	point_map = (t_point **)malloc(sizeof(t_point *) * map->total_rows + 1);
+	if (!point_map)
 		return (NULL);
 	i = 0;
 	while (i < map->total_rows)
 	{
-		if(!(point_map[i++] = (t_point *)malloc(sizeof(t_point) * map->total_cols + 1)))
+		point_map[i] = (t_point *)malloc(sizeof(t_point) * map->total_cols + 1);
+		if (!point_map[i])
 		{
 			free_point_map(point_map);
-			return(NULL);
+			return (NULL);
 		}
+		i++;
 	}
-	return(point_map);
+	return (point_map);
 }
 
-//count collectibles and add it to map info
-void count_items(char item, t_map *map, int i, int j)
+void	count_items(char item, t_map *map, int i, int j)
 {
 	if (item == 'C')
 	{
@@ -48,9 +49,7 @@ void count_items(char item, t_map *map, int i, int j)
 	}
 }
 
-
-// fills neighbors of each point using row and col info, if it doesnt exist it sets it to null
-void fill_neighbors(t_map *map, t_point **point_map, int i, int j)
+void	fill_neighbors(t_map *map, t_point **point_map, int i, int j)
 {
 	if (i > 0)
 		point_map[i][j].up = &point_map[i - 1][j];
@@ -70,15 +69,15 @@ void fill_neighbors(t_map *map, t_point **point_map, int i, int j)
 		point_map[i][j].right = NULL;
 }
 
-// fill point map with info
-t_point **fill_point_map(t_list *head, t_map *map)
+t_point	**fill_point_map(t_list *head, t_map *map)
 {
-	int i;
-	int j;
-	t_point **point_map;
+	int		i;
+	int		j;
+	t_point	**point_map;
 
-	if(!(point_map = create_point_map(map)))
-		return(NULL);
+	point_map = create_point_map(map);
+	if (!point_map)
+		return (NULL);
 	map->point_map = point_map;
 	while (head != NULL)
 	{	
@@ -96,12 +95,12 @@ t_point **fill_point_map(t_list *head, t_map *map)
 		head = head->next;
 	}
 	point_map[map->total_rows] = NULL;
-	return (point_map);	
+	return (point_map);
 }
 
-int free_point_map(t_point	**point_map)
+int	free_point_map(t_point	**point_map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (point_map[i])
@@ -112,5 +111,5 @@ int free_point_map(t_point	**point_map)
 	}
 	free(point_map);
 	point_map = NULL;
-	return(1);
+	return (1);
 }

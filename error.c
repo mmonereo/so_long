@@ -6,13 +6,13 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 15:55:36 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/10/05 12:23:20 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 12:31:54 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int file_error(int error)
+int	file_error(int error)
 {
 	if (error == 20)
 		printf("Error\nAll lines must have the same width\n");
@@ -28,15 +28,15 @@ int file_error(int error)
 		printf("Error\nMap File must use .ber extension\n");
 	if (error == 26)
 		printf("Error\nMap File not found\n");
-	return(0);
+	return (0);
 }
 
-int mlx_error(int error, t_global *global)
+int	mlx_error(int error, t_global *global)
 {	
 	if (error == 30)
 		printf("Error\nError during minilib init\n");
 	if (error == 31)
 		printf("Error\nError loading sprites\n");
 	free_all(global);
-	return(0);
+	return (0);
 }

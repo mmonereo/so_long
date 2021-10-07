@@ -6,16 +6,15 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 15:34:11 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/10/05 12:24:07 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 12:48:15 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-
 void	ft_lstclear(t_list **lst)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	while (*lst != NULL)
 	{
@@ -29,11 +28,12 @@ void	ft_lstclear(t_list **lst)
 	*lst = NULL;
 }
 
-t_list *new_lst (void)
+t_list	*new_lst(void)
 {
-	t_list *new;
+	t_list	*new;
 
-	if (!(new = (t_list *)malloc(sizeof(t_list))))
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
 		return (NULL);
 	ft_memset(new, '\0', sizeof(t_list));
 	new->next = NULL;
@@ -64,14 +64,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last->next = new;
 }
 
-// creates a list where each node has a line from file ,an index num and line len
-t_list *load_lst(int fd)
+t_list	*load_lst(int fd)
 {
 	char		*line;
 	int			i;
 	t_list		*head;
 	t_list		*new;
-	
+
 	head = NULL;
 	i = 0;
 	while (get_next_line(fd, &line))
@@ -91,5 +90,5 @@ t_list *load_lst(int fd)
 	ft_lstadd_back(&head, new);
 	i++;
 	free(line);
-	return(head);
+	return (head);
 }

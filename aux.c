@@ -6,26 +6,21 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 16:23:51 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/10/05 17:01:07 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 15:20:20 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void leaks_exit(void)
-{
-	system("leaks so_long");
-}
-
-int close_mlx(t_global *global)
+int	close_mlx(t_global *global)
 {
 	mlx_destroy_window(global->mlx->mlx_ptr, global->mlx->win);
 	free_all(global);
 	exit(0);
-	return(0);
+	return (0);
 }
 
-void free_all(t_global *global)
+void	free_all(t_global *global)
 {	
 	if (global->map->point_map)
 		free_point_map(global->map->point_map);
