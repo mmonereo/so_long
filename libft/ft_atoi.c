@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 16:57:30 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/10/05 10:38:55 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:38:20 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int res;
-	int neg;
-	int i;
+	int	res;
+	int	neg;
+	int	i;
 
 	res = 0;
 	neg = 1;

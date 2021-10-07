@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 17:04:50 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/10/19 00:51:11 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:20:45 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t x;
+	size_t	i;
+	size_t	x;
 
 	i = 0;
 	x = 0;

@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 13:45:01 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/28 13:49:57 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:32:04 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_numlen(unsigned int n)
 {
-	unsigned int len;
+	unsigned int	len;
 
 	len = 0;
 	while (n >= 10)
@@ -25,7 +25,7 @@ static int	ft_numlen(unsigned int n)
 	return (len + 1);
 }
 
-char		*ft_itoa_nosign(int n)
+char	*ft_itoa_nosign(int n)
 {
 	unsigned int	len;
 	unsigned int	i;
@@ -36,7 +36,8 @@ char		*ft_itoa_nosign(int n)
 	if (n < 0)
 		num = n * -1;
 	len = ft_numlen(num);
-	if (!(res = (char *)malloc(sizeof(char) * len + 1)))
+	res = (char *)malloc(sizeof(char) * len + 1);
+	if (!res)
 		return (NULL);
 	i = len - 1;
 	while (num >= 10)

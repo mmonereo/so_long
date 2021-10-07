@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 17:01:25 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/09/17 17:35:21 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:26:57 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	int value;
+	int	value;
 
 	value = 0;
 	if ((c > 31 && c < 127))

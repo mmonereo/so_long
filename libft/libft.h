@@ -6,18 +6,18 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 17:32:31 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 09:26:57 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:42:26 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #	ifndef LIBFT_H
-#	define LIBFT_H
+# define LIBFT_H
 
-#	include <unistd.h>
-#	include <string.h>
-#	include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
 
-#define BUFFER_SIZE 300
+# define BUFFER_SIZE 300
 
 int					ft_atoi(const char *str);
 
@@ -36,11 +36,11 @@ void				ft_putendl_fd(char *s, int fd);
 
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
-int 				ft_strlen(const char *str);
+int					ft_strlen(const char *str);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strnstr(const char *haystack, const char *needle,
-					int len);
+						int len);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 
 void				*ft_memset(void *b, int c, size_t len);

@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 17:32:49 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/04/14 10:27:46 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:29:03 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	ft_wordlen(char const *s, char c)
 	return (len);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		wordc;

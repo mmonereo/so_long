@@ -6,13 +6,13 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 18:46:03 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/10/19 16:52:18 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:33:50 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_sub_u(char const *s, unsigned int start, size_t len)
+static char	*ft_sub_u(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
 	char			*new;
@@ -32,7 +32,7 @@ static char		*ft_sub_u(char const *s, unsigned int start, size_t len)
 	return (new);
 }
 
-static int		ft_inset(char c, char const *set)
+static int	ft_inset(char c, char const *set)
 {
 	if (ft_strchr(set, c) == 0)
 	{
@@ -44,7 +44,7 @@ static int		ft_inset(char c, char const *set)
 	}
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		len;
@@ -65,7 +65,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	{
 		len = 0;
 	}
-	if (!(new = ft_sub_u(s1, i, len)))
+	new = ft_sub_u(s1, i, len);
+	if (!new)
 		return (NULL);
 	new[len] = 0;
 	return (new);

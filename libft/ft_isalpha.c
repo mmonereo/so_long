@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 16:59:22 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/09/17 17:35:36 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:29:45 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-	int value;
+	int	value;
 
 	value = 0;
 	if ((c > 64 && c < 91) || (c > 96 && c < 123))

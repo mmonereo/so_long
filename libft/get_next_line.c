@@ -6,13 +6,13 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:47:46 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/09/29 09:44:54 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:58:07 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		has_nl(char *str)
+static int	has_nl(char *str)
 {
 	int	i;
 
@@ -40,7 +40,8 @@ static char	*get_output(char *str)
 		return (0);
 	while (str[i] && str[i] != '\n')
 		i++;
-	if (!(output = malloc(sizeof(char) * (i + 1))))
+	output = malloc(sizeof(char) * (i + 1));
+	if (!output)
 		return (0);
 	while (str[j] && str[j] != '\n')
 	{
@@ -60,15 +61,14 @@ static char	*get_remain(char *str)
 	j = 0;
 	i = 0;
 	while (str[i] && str[i] != '\n')
-	{
 		++i;
-	}
 	if (!str[i])
 	{
 		free(str);
 		return (0);
 	}
-	if (!(remain = malloc(sizeof(char) * (ft_strlen(str) - i + 1))))
+	remain = malloc(sizeof(char) * (ft_strlen(str) - i + 1));
+	if (!remain)
 		return (0);
 	while (str[i])
 	{
@@ -79,7 +79,7 @@ static char	*get_remain(char *str)
 	return (remain);
 }
 
-int		get_next_line(const int fd, char **line)
+int	get_next_line(const int fd, char **line)
 {
 	int			reader;
 	char		*buf;
@@ -90,13 +90,12 @@ int		get_next_line(const int fd, char **line)
 		return (-1);
 	while (has_nl(text) == 0 && reader != 0)
 	{
-		if (!(buf = malloc(sizeof(char) * BUFFER_SIZE + 1)))
+		buf = malloc(sizeof(char) * BUFFER_SIZE + 1);
+		if (!buf)
 			return (-1);
-		if ((reader = read(fd, buf, BUFFER_SIZE)) == -1)
-			{
-				free(buf);
-				return(-1);
-			}
+		reader = read(fd, buf, BUFFER_SIZE);
+		if (reader == -1)
+			return (-1);
 		buf[reader] = '\0';
 		text = ft_strjoin_free(text, buf);
 		free(buf);
@@ -107,4 +106,3 @@ int		get_next_line(const int fd, char **line)
 		return (0);
 	return (1);
 }
-

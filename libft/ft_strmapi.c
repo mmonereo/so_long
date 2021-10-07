@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 18:45:17 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/09/17 18:45:54 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:32:50 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	len = ft_strlen(s);
-	if (!(new = (char *)malloc(sizeof(char) * len + 1)))
-	{
+	new = (char *)malloc(sizeof(char) * len + 1);
+	if (!new)
 		return (NULL);
-	}
 	while (s[i])
 	{
 		new[i] = f(i, s[i]);

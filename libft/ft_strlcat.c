@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 17:04:32 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/09/21 17:14:18 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:34:21 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t srclen;
-	size_t check;
-	size_t s;
+	size_t	i;
+	size_t	srclen;
+	size_t	check;
+	size_t	s;
 
 	i = 0;
 	srclen = 0;

@@ -6,15 +6,15 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 18:31:03 by mmonereo          #+#    #+#             */
-/*   Updated: 2021/01/15 10:20:42 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:19:11 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			ft_numlen(unsigned int n)
+static int	ft_numlen(unsigned int n)
 {
-	unsigned int len;
+	unsigned int	len;
 
 	len = 0;
 	while (n >= 10)
@@ -27,7 +27,7 @@ static int			ft_numlen(unsigned int n)
 
 static unsigned int	ft_numselect(int n, unsigned int *num)
 {
-	unsigned int len;
+	unsigned int	len;
 
 	if (n < 0)
 	{
@@ -42,7 +42,7 @@ static unsigned int	ft_numselect(int n, unsigned int *num)
 	return (len);
 }
 
-char				*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	unsigned int	num;
 	unsigned int	len;
@@ -51,10 +51,9 @@ char				*ft_itoa(int n)
 
 	num = n;
 	len = ft_numselect(n, &num);
-	if (!(res = (char *)malloc(sizeof(char) * len + 1)))
-	{
+	res = (char *)malloc(sizeof(char) * len + 1);
+	if (!res)
 		return (NULL);
-	}
 	if (n < 0)
 	{
 		res[0] = '-';

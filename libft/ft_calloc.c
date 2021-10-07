@@ -6,7 +6,7 @@
 /*   By: mmonereo <mmonereo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 16:58:30 by mmonereo          #+#    #+#             */
-/*   Updated: 2020/09/17 17:35:49 by mmonereo         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:35:31 by mmonereo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t		i;
 
 	i = 0;
-	if (!(new = malloc(sizeof(size) * nmemb)))
-	{
+	new = malloc(sizeof(size) * nmemb);
+	if (!new)
 		return (NULL);
-	}
 	while (i < size * nmemb)
 	{
 		new[i] = '\0';
