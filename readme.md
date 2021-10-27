@@ -32,7 +32,7 @@ The program receives a text file representing the game map which is then rendere
 
 Once the map is checked and parsed, the minilibX loads the sprites, does the first render and the main game loop is started. The game is not in real-time and renders occur when the player moves.
 
-Use the arrow keys or WASD to move and ESC to exit the game.
+
 
 ## How to use
 
@@ -41,7 +41,7 @@ Use the arrow keys or WASD to move and ESC to exit the game.
 3. $ ./so_long map.ber
 4. Enjoy! 
 
-
+Use the arrow keys or WASD to move and ESC to exit the game.
 
 
 **Thanks to 0x72 for the lovely sprites!!**
