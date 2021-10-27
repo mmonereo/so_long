@@ -43,6 +43,7 @@ Once the map is checked and parsed, the minilibX loads the sprites, does the fir
 
 Use the arrow keys or WASD to move and ESC to exit the game.
 
+You can find other maps to play in the maps/ folder or create your own
 
 **Thanks to 0x72 for the lovely sprites!!**
 https://0x72.itch.io/dungeontileset-ii
