@@ -26,6 +26,7 @@ The program receives a text file representing the game map which is then rendere
 
 #### Example of a valid map 
 ![](https://i.imgur.com/6CaX20E.png)
+![](https://i.imgur.com/X5jYPgO.png)
 
 ### Game engine
 
