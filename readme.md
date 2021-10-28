@@ -4,11 +4,13 @@
  
 ## :video_game: Description
 
-A simple 2D game coded in C that uses the minilibX graphic library.
+A simple 2D game coded in C that uses the MiniLibX graphic library.
 
 The player has to collect all the items scattered around the map and exit the level in as few moves as possible.
 
-This project is part of the common core at 42 Madrid Coding School and serves as an introduction to the minilibX.
+This project is part of the common core at 42 Madrid Coding School and serves as an introduction to the MiniLibX.
+
+You can read more about the MiniLibX here: https://qst0.github.io/ft_libgfx/man_mlx.html
 
 ## :nut_and_bolt: How it works
 
@@ -43,10 +45,12 @@ Once the map is checked and parsed, the minilibX loads the sprites, does the fir
 
 Use the arrow keys or WASD to move and ESC to exit the game.
 
-You can find other maps to play in the maps/ folder or create your own
+You can find other maps to play in the maps/ folder or create your own.
 
 **Thanks to 0x72 for the lovely sprites!!**
 https://0x72.itch.io/dungeontileset-ii
+
+
 
 
 ---
